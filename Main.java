@@ -15,9 +15,8 @@ public class Main {
         player.show();
         decision.firstDecision(player.getMyCardList());
 //        decision.firstDecision(pair.getMyCardList());
+// プレイヤーのカードを見る
         player.show();
 //        pair.show();
-
-
     }
 }
