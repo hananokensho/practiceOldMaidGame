@@ -1,5 +1,3 @@
-package oldMaidGame;
-
 public class Main {
     public static void main(String[] args) {
         // 判定クラス
@@ -15,7 +13,7 @@ public class Main {
         player.show();
         decision.firstDecision(player.getMyCardList());
 //        decision.firstDecision(pair.getMyCardList());
-// プレイヤーのカードを見る
+//      プレイヤーのカードを見る
         player.show();
 //        pair.show();
     }

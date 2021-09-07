@@ -1,5 +1,3 @@
-package oldMaidGame;
-
 public class Player extends Human{
 
     public void show(){
