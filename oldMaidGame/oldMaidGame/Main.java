@@ -18,3 +18,7 @@ public class Main {
 //        pair.show();
     }
 }
+
+
+// 参考
+// https://waterlow2013.hatenablog.com/entry/2014/01/20/001138
