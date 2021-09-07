@@ -1,5 +1,3 @@
-package oldMaidGame;
-
 public class Pair extends Human{
 
 

@@ -1,5 +1,3 @@
-package oldMaidGame;
-
 public class Card {
     private String simbol;
     private int num;
