@@ -45,14 +45,8 @@ public class Deck {
     }
 
     // カードを配る
-    public void dealCard(){
-        for(int i = 0 ; i < deckList.size();i+=2){
-            player.setMyCardList(deckList.get(i));
-            pair.setMyCardList(deckList.get(i+1));
-            deckList.subList(i,i+2);
-        }
+    public void jokerDealCard(){
         // playerもしくはpairにジョーカーを配る
-        //　0はジョーカー
         Random random = new Random();
         if(random.nextInt(2) == 0){
             player.setMyCardList(new Card("ジョーカー" , 0));

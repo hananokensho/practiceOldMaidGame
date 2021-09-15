@@ -1,27 +1,21 @@
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.*;
 
 public class Decision {
 
-    public void firstDecision(List<Card> cardList) {
-        boolean repeatFlag = false;
-        while (!repeatFlag) {
-            for (int i = 0; i < cardList.size(); i++) {
-                for (int j = 0; j < cardList.size() ; j++) {
-                    if (cardList.get(i).getNum() == cardList.get(j).getNum() &&
-                        !cardList.get(i).getSimbol().equals(cardList.get(j).getSimbol())) {
-                        cardList.remove(i);
-                        cardList.remove(j);
-                        continue;
-                    }
-                }
-                continue;
+    public void decision(Card deckCard, List<Card> myCardList) {
+        boolean allocationFlag = false;
+        Loop_i:
+        for (int i = 0; i < myCardList.size(); i++) {
+            if (deckCard.getNum() == myCardList.get(i).getNum()) {
+                myCardList.remove(i);
+                allocationFlag = true;
+                break Loop_i;
             }
-            Set<Card> list = new HashSet<>(cardList);
-            if(list.size() == cardList.size()) {
-                repeatFlag = true;
-            }
+        }
+        if (allocationFlag == false) {
+            myCardList.add(deckCard);
         }
     }
 }
