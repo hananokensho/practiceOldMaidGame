@@ -18,11 +18,9 @@ public abstract class Human {
         this.myCardList.add(myCardList);
     }
 
-    public void draw(List<Card> myCardList , List<Card> pairCardList){
-        Random rand = new Random();
-        decision.decision(pairCardList.get(rand.nextInt(pairCardList.size())),myCardList);
-    }
+    public abstract void draw(List<Card> myCardList , List<Card> pairCardList);
 
     public abstract void firstDraw(List<Card> deckCardList , List<Card> myCardList);
+
 }
 

@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Random;
 
 public class Player extends Human{
 
@@ -21,5 +22,12 @@ public class Player extends Human{
             decision.decision(deckCardList.get(i), myCardList);
             deckCardList.remove(i);
         }
+    }
+
+    public void draw(List<Card> myCardList , List<Card> pairCardList){
+        Random rand = new Random();
+        int number = rand.nextInt(pairCardList.size());
+        decision.decision(pairCardList.get(number),myCardList);
+        pairCardList.remove(number);
     }
 }
