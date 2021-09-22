@@ -3,12 +3,12 @@ import java.util.Random;
 
 public class Player extends Human{
 
-    public void show(){
-        System.out.println("playerのカードリスト");
-        for(int i = 0 ; i < getMyCardList().size(); i++){
-            System.out.print((i + 1) + "枚目:" );
-            System.out.println(getMyCardList().get(i).getNum() + " : " + getMyCardList().get(i).getSimbol());
+    public void show(List<Card> myCardList){
+        System.out.println("自分のカードリスト");
+        for (int i = 0; i < myCardList.size(); i++) {
+            System.out.print("[" + myCardList.get(i).getNum() + ":" + myCardList.get(i).getSimbol() + "] ");
         }
+        System.out.println("");
     }
 
     public Player(Decision decision) {

@@ -25,9 +25,11 @@ public class Pair extends Human{
     }
 
     public void draw(List<Card> myCardList , List<Card> pairCardList){
+        System.out.println("相手のターン");
         Random rand = new Random();
         int number = rand.nextInt(pairCardList.size());
         decision.decision(pairCardList.get(number),myCardList);
         pairCardList.remove(number);
+
     }
 }
