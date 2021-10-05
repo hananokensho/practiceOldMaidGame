@@ -8,7 +8,6 @@ public class Deck {
     final Player player;
     final Pair pair;
 
-    //　コンストラクターでフィールドを初期化
     public Deck(Player player, Pair pair) {
         this.player = player;
         this.pair = pair;

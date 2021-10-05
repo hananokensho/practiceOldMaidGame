@@ -1,18 +1,19 @@
 public class Card {
-    private String simbol;
+    private String suit;
     private int num;
 
-    public Card(String simbol , int num){
-        this.simbol = simbol;
+
+    public Card(String suit , int num){
+        this.suit = suit;
         this.num = num;
     }
 
-    public String getSimbol() {
-        return simbol;
+    public String getSuit() {
+        return suit;
     }
 
-    public void setSimbol(String simbol) {
-        this.simbol = simbol;
+    public void setSuit(String simbol) {
+        this.suit = simbol;
     }
 
     public Card(int num){

@@ -18,7 +18,7 @@ public abstract class Human {
         this.myCardList.add(myCardList);
     }
 
-    public abstract void draw(List<Card> myCardList , List<Card> pairCardList);
+//    public abstract void draw(List<Card> myCardList , List<Card> pairCardList);
 
     public abstract void firstDraw(List<Card> deckCardList , List<Card> myCardList);
 

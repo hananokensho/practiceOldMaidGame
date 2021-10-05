@@ -2,10 +2,15 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("[ババ抜きゲーム]");
+        System.out.println("");
         // 判定クラス
         Decision decision = new Decision();
+        // プレイヤークラス
         Player player = new Player(decision);
+        // 相手クラス
         Pair pair = new Pair(decision);
+        // decisionクラスのフィールドを初期化
         decision.setPair(pair);
         decision.setPlayer(player);
         // Deckのフィールドにplayerとpairを初期化
