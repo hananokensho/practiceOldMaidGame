@@ -41,6 +41,8 @@ public class Decision {
 
     // ペアから引いたカードを受け取り同じ数字のカードがあれば消去
     public void decisionShow(Card selectCard, List<Card> myCardList) {
+        // ペアのカードが0になっていないか判定
+        winOrLossDecision();
         // プレイヤーのカードリストに引いたカードを追加
         myCardList.add(selectCard);
         Loop:
@@ -106,28 +108,34 @@ public class Decision {
         decisionShow(pairCardList.get(select - 1), myCardList);
         // プレイヤーに引かれたペアのカードを消去
         pairCardList.remove(select - 1);
+        // ペアのカードが0になっていないか判定
+        winOrLossDecision();
     }
-    // プレイヤーorペアのどちらかが0枚になった時の勝ち負け判定
-    public void winOrLossDecision() {
-        while (true) {
-            selectCard(player.getMyCardList(), pair.getMyCardList());
+    // プレイヤーorペアのどちらかが0枚になるまで繰り返し
+    public boolean winOrLossDecision() {
             if (player.getMyCardList().size() == 0) {
                 System.out.println("おめでとうございます！");
                 System.out.println("あなたの勝ちです！！！");
-                break;
+                System.exit(0);
+                return true;
             } else if (pair.getMyCardList().size() == 0) {
                 System.out.println("相手の勝ちです");
-                break;
+                System.out.println("次は勝てるように頑張ろう！");
+                System.exit(0);
+                return true;
             }
+            return  false;
+    }
+
+    // プレイヤーorペアのどちらかが0枚になるまで繰り返し
+    public void repeat(){
+        while(true) {
+            selectCard(player.getMyCardList(), pair.getMyCardList());
+            winOrLossDecision();
             pair.draw(pair.getMyCardList(), player.getMyCardList());
-            if (player.getMyCardList().size() == 0) {
-                System.out.println("おめでとうございます！");
-                System.out.println("プレイヤーの勝ちです");
-                break;
-            } else if (pair.getMyCardList().size() == 0) {
-                System.out.println("相手の勝ちです！");
-                break;
-            }
+            winOrLossDecision();
+            // ペアのカードリストを毎回シャッフル(ずっと同じインデックスのため)
+            Collections.shuffle(pair.getMyCardList());
         }
     }
 }

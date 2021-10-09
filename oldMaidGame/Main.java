@@ -26,6 +26,6 @@ public class Main {
 //        player.show();
 //        pair.show();
         //勝敗がつくまで相手のカードをドロー
-        decision.winOrLossDecision();
+        decision.repeat();
     }
 }
